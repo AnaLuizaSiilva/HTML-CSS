@@ -1,0 +1,43 @@
+.tabela1{
+    border: solid black;
+    text-align: center;
+}
+.tabela1 th{
+    background-color: black;
+    color: white;
+}
+.tabela1 td{
+    background-color: beige;
+}
+.Intervalo td{
+    background-color: black;
+    color: rgb(255, 255, 255);
+}
+
+.tabela2{
+    border: solid black;
+    text-align: center;
+}
+.tabela2 th{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.tabela2 td:nth-child(2){
+    font-weight: bold;
+    color: blue;
+}
+.Vencedor td{
+    background-color: gold;
+}
+.tabela3{
+    border: solid black;
+    text-align: center;
+}
+.tabela3 th{
+    color: white;
+    background-color: black;
+    font-weight: bold;
+}
+.tabela3 td.img{
+    text-align: center;
+}
