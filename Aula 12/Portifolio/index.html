@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Luiza - Portfólio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #0f172a;
+            background: #0f172a;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1a2a4a 50%, #1a3a5a 100%);
+            color: #e0e7ff;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(34, 197, 238, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(0deg, transparent 24%, rgba(99, 102, 241, 0.05) 25%, rgba(99, 102, 241, 0.05) 26%, transparent 27%, transparent 74%, rgba(99, 102, 241, 0.05) 75%, rgba(99, 102, 241, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(99, 102, 241, 0.05) 25%, rgba(99, 102, 241, 0.05) 26%, transparent 27%, transparent 74%, rgba(99, 102, 241, 0.05) 75%, rgba(99, 102, 241, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            align-items: center;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 3px solid #6366f1;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3), inset 0 0 0 1px rgba(99, 102, 241, 0.1);
+            animation: slideIn 0.8s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .glow-effect {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(30px);
+        }
+
+        .hero-text h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .title {
+            font-size: 1.3em;
+            color: #22d3ee;
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-text .intro {
+            font-size: 1.05em;
+            color: #cbd5e1;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav a {
+            display: block;
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 16px 25px;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25px;
+            right: 25px;
+            height: 2px;
+            background: linear-gradient(90deg, #6366f1, #22d3ee);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #22d3ee;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        section {
+            margin-bottom: 100px;
+        }
+
+        h2 {
+            color: #e0e7ff;
+            font-size: 2.8em;
+            margin-bottom: 50px;
+            font-weight: 900;
+            position: relative;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1, #22d3ee);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(34, 197, 238, 0.05) 100%);
+            padding: 50px;
+            border-radius: 8px;
+            line-height: 1.9;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #cbd5e1;
+            font-size: 1.05em;
+            backdrop-filter: blur(10px);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(34, 197, 238, 0.05) 100%);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+            filter: blur(40px);
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .skill-card:hover::before {
+            top: 0;
+            right: 0;
+        }
+
+        .skill-card h3 {
+            color: #22d3ee;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.2em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-card p {
+            color: #94a3b8;
+            font-size: 0.95em;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(34, 197, 238, 0.05) 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 25px 50px rgba(99, 102, 241, 0.25);
+        }
+
+        .project-badge {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(34, 197, 238, 0.2));
+            color: #22d3ee;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: 700;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-content {
+            padding: 35px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            color: #e0e7ff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .project-content p {
+            color: #cbd5e1;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: rgba(34, 197, 238, 0.15);
+            color: #22d3ee;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 700;
+            border: 1px solid rgba(34, 197, 238, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .experience-item {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(34, 197, 238, 0.05) 100%);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border-left: 3px solid #6366f1;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-left: 3px solid #22d3ee;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .experience-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .experience-item h3 {
+            color: #e0e7ff;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .experience-item .company {
+            color: #22d3ee;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+        }
+
+        .experience-item .period {
+            color: #64748b;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .experience-item p {
+            color: #cbd5e1;
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(34, 197, 238, 0.1) 100%);
+            padding: 60px 50px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #cbd5e1;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-section p {
+            margin-bottom: 35px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #22d3ee);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.3s;
+        }
+
+        .contact-links a:hover::before {
+            left: 100%;
+        }
+
+        .contact-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        footer {
+            background-color: #0a0f1f;
+            color: #64748b;
+            text-align: center;
+            padding: 40px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2em;
+            }
+
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav a {
+                padding: 14px 20px;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 80px 20px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <div class="glow-effect"></div>
+                <img src="./minha foto.jpg" alt="Ana Luiza" class="profile-photo">
+            </div>
+            <div class="hero-text">
+                <h1>Ana Luiza Da Silva Pereira</h1>
+                <div class="title">Desenvolvedora / Tech</div>
+                <p class="intro">Dev criativa | Design + Code.</p>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- SOBRE -->
+        <section id="sobre">
+            <h2>Quem Sou?</h2>
+            <div class="about-content">
+                <p>Meu nome é Ana Luiza e estou cursando desenvolvimento de sistemas no SENAI e pretendo começar uma faculdade com foco em full stack. Apaixonada por resolver problemas através de código limpo e arquitetura bem estruturada. Busco constantemente novos desafios e estou sempre aberta a colaborações que agreguem valor.</p>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="habilidades">
+            <h2>Stack Técnico</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <p>CSS e JavaScript avançado.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <p>Node.js, Microserviços e Banco de dados.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>DevOps</h3>
+                    <p>Git.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Ferramentas</h3>
+                    <p>VS Code, Git e Figma.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos">
+            <h2>Projetos em Destaque</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-badge">Projeto 1</div>
+                    <div class="project-content">
+                        <h3>Site de um Sistema Escolar</h3>
+                        <p>Descrição do projeto. Explique o problema resolvido, tecnologias utilizadas, arquitetura implementada e resultados alcançados.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">Projeto 2</div>
+                    <div class="project-content">
+                        <h3>Nome do Projeto</h3>
+                        <p>Descrição do projeto. Explique o problema resolvido, tecnologias utilizadas, arquitetura implementada e resultados alcançados.</p>
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-badge">Projeto 3</div>
+                    <div class="project-content">
+                        <h3>Nome do Projeto</h3>
+                        <p>Descrição do projeto. Explique o problema resolvido, tecnologias utilizadas, arquitetura implementada e resultados alcançados.</p>
+                        <div class="project-tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIÊNCIA -->
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+            
+            <div class="experience-item">
+                <h3>Desenvolvedora Full Stack</h3>
+                <div class="company">Tech Company</div>
+                <div class="period">Janeiro 2023 - Presente</div>
+                <p>Liderança no desenvolvimento de plataformas escaláveis. Implementação de arquiteturas modernas, otimização de performance, mentoria de time junior e delivery de features críticas com impacto direto em crescimento.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Engenheira Frontend</h3>
+                <div class="company">Digital Solutions</div>
+                <div class="period">Junho 2021 - Dezembro 2022</div>
+                <p>Desenvolvimento de interfaces responsivas e acessíveis. Implementação de design systems, otimização de UX/performance e integração de APIs complexas com foco em qualidade e escalabilidade.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Desenvolvedora Júnior</h3>
+                <div class="company">Startup Tech</div>
+                <div class="period">Março 2020 - Maio 2021</div>
+                <p>Contribuição em projetos web modernos, aprendizado de best practices, desenvolvimento com React e JavaScript, participação ativa em code reviews e pair programming.</p>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato">
+            <h2>Vamos Trabalhar Juntos?</h2>
+            <div class="contact-section">
+                <p>Sempre em busca de novos desafios tech e colaborações interessantes. Entre em contato para discutir projetos, oportunidades ou apenas conversar sobre tech.</p>
+                <div class="contact-links">
+                    <a href="mailto:analuizasiilva@gmail.com">Email</a>
+                    <a href="https://linkedin.com/in/seu-perfil" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/AnaLuizaSiilva" target="_blank">GitHub</a>
+                    <a href="https://instagram.com/ana.siilvapr" target="_blank">Instagram</a>
+                    <a href="tel:+55119999999">Telefone</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ana Luiza. Built with Code & Passion.</p>
+    </footer>
+</body>
+</html>
