@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(182, 237, 237);
+    
+    h1{
+        font-weight: bold;
+        text-align: center;
+    }
+}
+footer{
+    background-color: gray;
+    text-align: center;
+    margin: 10px;
+    padding: 8px;
+
+}
+main{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+    padding: 10px;
+}
+
+header{
+    text-align: center;
+    background-color: rgb(236, 234, 234);
+    margin: 10px;
+    padding: 10px;
+
+}
+
+footer a {
+    text-decoration: none;
+}

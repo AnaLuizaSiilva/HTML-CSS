@@ -1,0 +1,28 @@
+header h1{
+    background-color: bisque;
+    text-align: center;
+    padding: 8px;
+}
+header a{
+   text-align: center;
+    text-decoration: none;
+    color: black;
+}
+footer p{
+    text-align: center;
+}
+ aside {
+      width: 250px;
+      background-color: #f1e1d0;
+      border-radius: 10px;
+      padding: 10px;
+      height: fit-content;
+      float: right;
+      
+    }
+
+      aside h3 {
+      color: #5c2e0f;
+      border-bottom: 1px solid #7b3f00;
+      padding-bottom: 5px;
+    }

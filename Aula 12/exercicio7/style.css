@@ -1,0 +1,20 @@
+  article {
+    background-color: #f5f0e6;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    color: #4b2e2e; 
+  }
+
+article header h1 {
+    color: #7b3f00;
+}
+body{
+    background-color:#f5f0e6 ;
+}
+article section h2 {
+    color: #5c2e0f;
+ }
+  article p, article li {
+    color: #4b2e2e;
+ }

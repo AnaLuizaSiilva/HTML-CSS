@@ -1,0 +1,32 @@
+body{
+    background-color: bisque;
+}
+
+h1{
+
+    color: #000;
+    text-align: center;
+    background-color: beige;
+    
+}
+#seçao1{
+    color: blue;
+   font-weight: bold;
+   h2{
+    text-align: left;
+   }
+
+}
+#seçao2{
+    color: #ff0000;
+    font-weight: bold;
+   
+}
+#seçao3{
+    color: yellow;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ p{
+    font-family: Arial, Helvetica, sans-serif;
+   }
